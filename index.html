@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>GitHub Actions Deployment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aonkare - Ayurvedic Medicines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello from Ankit, GitHub Actions!</h1>
+
+<header>
+    <h1>Aonkare</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Natural Wellness, Ayurveda Inspired</h2>
+    <p>Explore our range of pure Ayurvedic medicines for a healthier life</p>
+    <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+        Shop Now
+    </button>
+</section>
+
+<section class="products" id="products">
+    <h3>Our Products</h3>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1619473165033-5bc86b2e7ee9?fit=crop&w=400&q=80" alt="Herbal Capsules">
+            <div class="info">
+                <h4>Herbal Capsules</h4>
+                <p>Boost your immunity with our natural herbal capsules, crafted using Ayurvedic principles.</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1611234829875-0dc8f6933d91?fit=crop&w=400&q=80" alt="Ayurvedic Oil">
+            <div class="info">
+                <h4>Ayurvedic Oil</h4>
+                <p>Experience natural healing with our traditional Ayurvedic oils for body and mind wellness.</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1611078480455-812f1a5e4f1b?fit=crop&w=400&q=80" alt="Herbal Tea">
+            <div class="info">
+                <h4>Herbal Tea</h4>
+                <p>Relax and detox with our calming herbal teas, made from authentic Ayurvedic herbs.</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <p>&copy; 2026 Aonkare Ayurvedic Medicines. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
