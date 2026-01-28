@@ -1,0 +1,79 @@
+┌──────────────────────────┐
+│  Developer (You)         │
+│                          │
+│  Edit index.html         │
+│  git commit              │
+│  git push (main branch)  │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│  GitHub Repository       │
+│  gh-deployment-workflow  │
+│                          │
+│  Branch: main            │
+│  File changed:           │
+│  index.html              │
+└─────────────┬────────────┘
+              │
+              │  push event
+              │  (paths: index.html)
+              ▼
+┌─────────────────────────────────────┐
+│ GitHub Actions Workflow             │
+│ .github/workflows/deploy.yml        │
+│                                     │
+│ Triggered because:                  │
+│ - branch = main                     │
+│ - index.html changed                │
+└─────────────┬───────────────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│ Job: deploy              │
+│ Runner: ubuntu-latest    │
+└─────────────┬────────────┘
+              │
+              ▼
+┌─────────────────────────────────────┐
+│ Step 1: Checkout repository         │
+│ actions/checkout@v4                 │
+│                                     │
+│ → index.html available on runner    │
+└─────────────┬───────────────────────┘
+              │
+              ▼
+┌─────────────────────────────────────┐
+│ Step 2: Configure GitHub Pages      │
+│ actions/configure-pages@v5          │
+│                                     │
+│ → Prepares Pages environment        │
+└─────────────┬───────────────────────┘
+              │
+              ▼
+┌─────────────────────────────────────┐
+│ Step 3: Upload Pages artifact       │
+│ actions/upload-pages-artifact@v3    │
+│                                     │
+│ → Uploads repository files (.)      │
+└─────────────┬───────────────────────┘
+              │
+              ▼
+┌─────────────────────────────────────┐
+│ Step 4: Deploy to GitHub Pages      │
+│ actions/deploy-pages@v4             │
+│                                     │
+│ → Publishes website                 │
+└─────────────┬───────────────────────┘
+              │
+              ▼
+┌─────────────────────────────────────┐
+│ ��� GitHub Pages Website              │
+│                                     │
+│ https://<username>.github.io/       │
+│ gh-deployment-workflow/             │
+│                                     │
+│ Shows:                              │
+│ "Hello, GitHub Actions!"            │
+└─────────────────────────────────────┘
+
